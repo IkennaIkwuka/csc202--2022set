@@ -1,11 +1,14 @@
 version: '3'
 services:
   database:
-    container_name: postgres-csc2022
+    container_name: postgres-csc2022-stream1
     image: postgres:latest
     ports:
       - "5433:5432"
     volumes:
-      - C:\Users\ikenn/data/postgres/csc2022:/data/postgres
+      - C:\Users\ikenn/data/postgres/csc2022-stream1:/data/postgres
     env_file:
       - csc2022.env
+
+  web:
+    image: nginx:latest
